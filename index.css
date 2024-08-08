@@ -1,0 +1,145 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream-color: hsl(30, 38%, 92%);
+    --vdark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white-color: hsl(0, 0%, 100%);
+    --font-1: 'Montserrat', sans-serif;
+    --font-2: 'Fraunces', serif;
+    --p-size: 14px;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--cream-color);
+    font-size: var(--p-size);
+    font-family: var(--font-1);
+    color: var(--dark-grayish-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+img {
+    width: 100%;
+    /* height: 100%; */
+}
+
+.container {
+    width: 100%;
+    height: 450px;
+    max-width: 600px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.col-right, .col-left {
+    width: 50%;
+    height: 100%;
+}
+
+.col-left #mobile {
+    display: none;
+}
+
+.col-right {
+    padding: 32px;
+}
+
+.col-right .product-name {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 500;
+}
+
+.col-right h1 {
+    font-family: var(--font-2);
+    color: var(--vdark-blue);
+    margin: 24px 0;
+    font-size: 32px;
+    line-height: 34px;
+}
+
+.col-right .desc {
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.col-right .price {
+    margin: 24px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.col-right .price p {
+    font-size: 32px;
+    font-family: var(--font-2);
+    font-weight: bold;
+    color: var(--dark-cyan);
+}
+
+.col-right .price span {
+    text-decoration: line-through;
+}
+
+.col-right button {
+    width: 100%;
+    background-color: var(--dark-cyan);
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.col-right button:hover {
+    background-color: var(--vdark-blue);
+    cursor: pointer;
+}
+
+.col-right button img {
+    width: 18px;
+}
+
+@media only screen and (max-width: 650px) {
+    body {
+        padding: 32px;
+    }
+
+    .container {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .col-left, .col-right {
+        width: 100%;
+    }
+
+    .col-left #desktop {
+        display: none;
+    }
+
+    .col-left #mobile {
+        display: block;
+    }
+}
